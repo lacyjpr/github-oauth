@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "JP Lacy",
+  "author": "",
   "license": "MIT",
   "private": false,
   "dependencies": {
