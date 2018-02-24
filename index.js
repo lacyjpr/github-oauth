@@ -1,32 +1,9 @@
 const express = require('express');
-const passport = require('passport');
-const GitHubStrategy = require('passport-github').Strategy;
-const keys = require('./config/keys');
+require('./services/passport');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send({ hi: 'there' });
-});
-
-passport.use(
-  new GitHubStrategy(
-    {
-      clientID: keys.githubClientID,
-      clientSecret: keys.githubClientSecret,
-      callbackURL: '/auth/github/callback',
-    },
-    (accessToken, refreshToken, profile, done) => {
-      console.log('access token', accessToken);
-      console.log('refresh token', refreshToken);
-      console.log('profile:', profile);
-    }
-  )
-);
-
-app.get('/auth/github', passport.authenticate('github'));
-
-app.get('/auth/github/callback', passport.authenticate('github'));
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
