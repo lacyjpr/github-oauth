@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
+const keys = require('./config/keys');
 
 const app = express();
 
