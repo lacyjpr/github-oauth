@@ -1,0 +1,11 @@
+{
+  "name": "github-oauth",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "JP Lacy",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
