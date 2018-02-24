@@ -5,6 +5,10 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
 passport.use(
   new GitHubStrategy(
     {
@@ -13,6 +17,7 @@ passport.use(
       callbackURL: '/auth/github/callback',
     },
     (accessToken, refreshToken, profile, done) => {
+      console.log('profile:', profile);
       User.findOne({ githubId: profile.id }).then(existingUser => {
         if (existingUser) {
           done(null, existingUser);
