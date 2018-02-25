@@ -6,7 +6,7 @@ https://pure-earth-88880.herokuapp.com/auth/github should log you in, but return
 
 https://pure-earth-88880.herokuapp.com/api/current_user will return a JSON with the user id & githubId
 
-https://pure-earth-88880.herokuapp.com/api/logout will log you out & return a blank page. Visiting https://pure-earth-88880.herokuapp.com/api/current_user again should give you a blank page.
+https://pure-earth-88880.herokuapp.com/api/logout will log you out & return a blank page. Visiting https://pure-earth-88880.herokuapp.com/api/current_user again should give you a blank page, showing that you are actually logged out.
 
 ##### Running locally
 
