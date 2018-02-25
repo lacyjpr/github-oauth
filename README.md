@@ -15,4 +15,4 @@ install dependencies with yarn,
 create a dev.js file in the config directory (use prod.js as a guide)
 & do "yarn dev" in a terminal.
 
-You should be able to navigate to http://localhost:5000 with the above routes.
+You should be able to navigate to http://localhost:5000 , adding /auth/github, /api/current_user or /api/logout according to what you want to do.
