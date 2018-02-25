@@ -10,13 +10,13 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+// middleware in the next 3 here, before a request from the browser goes to route handlers
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in milliseconds
     keys: [keys.cookieKey],
   })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
 
