@@ -5,16 +5,19 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
+// Turn user into user id in the cookie
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+// Turn user id in the cookie into a user
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => {
     done(null, user);
   });
 });
 
+// Github Oauth
 passport.use(
   new GitHubStrategy(
     {
